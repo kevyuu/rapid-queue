@@ -99,5 +99,3 @@ module.exports = {
 	createQueue : createQueue
 };
 
-
-

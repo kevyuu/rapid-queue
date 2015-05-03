@@ -1,6 +1,6 @@
 rapid-queue
 =============
-Javascript array.shift() is slow. This is an implementation of queue using circular buffer and table doubling. This implementation of shift is up to 100x faster than javascript array.shift().
+Javascript array.shift() is slow. This is an implementation using circular buffer and two stack. Circular queue use circular buffer and Double Stack Queue use two stack to implement the queue. This implementation of shift is up to 100x faster than javascript array.shift().
 
 ##Installation
 
@@ -19,10 +19,16 @@ Before using it, require the module
 ###Creating queue
 
 ```js
-  var queue = RapidQueue.createQueue(5);
+  var queue = RapidQueue.createQueue();
+  var dsQueue = RapidQueue.createDoubleStackQueue();
+  var circularQueue = RapidQueue.createCircularQueue
 ```
 
-It will create queue with initial capacity of 5, if you don't specify capacity, the capacity of the newly created queue is 200
+RapidQueue.createQueue is the same as RapidQueue.createDoubleStackQueue
+
+##Queue operation
+
+All of the operation below is aplicable to both double-stack-queue and circular-queue
 
 ###Inserting element to the end of queue
 
@@ -30,7 +36,7 @@ It will create queue with initial capacity of 5, if you don't specify capacity, 
   queue.push(5);`
 ```
 
-push will insert 5 to the back of the queue, it will automatically grow the array if the capacity is not enough.
+push will insert 5 to the back of the queue, it will automatically grow the array if the capacity is not enough(for circular queue).
 
 ###Get front element
 
