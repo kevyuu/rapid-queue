@@ -3,7 +3,7 @@ var expect = require("chai").expect;
 describe("queue",function() {
 	describe(".push()",function(){
 		it ("should insert one element to the back of a queue",function(){
-			var queue = Queue.createQueue();
+			var queue = Queue.createCircularQueue();
 			queue.push(200);
 			var front = queue.front();
 
@@ -14,7 +14,7 @@ describe("queue",function() {
 		});
 
 		it("should add capacity when exceeded",function() {
-			var queue = Queue.createQueue(5);
+			var queue = Queue.createCircularQueue(5);
 			queue.push(1);
 			queue.push(2);
 			queue.push(3);
@@ -42,22 +42,22 @@ describe("queue",function() {
 
 	describe(".shift()",function() {
 		it("should delete one element from the front",function() {
-			var queue = Queue.createQueue();
+			var queue = Queue.createCircularQueue();
 			queue.push(200);
 			queue.push(300);
 			expect(queue.shift()).to.equal(200);
 			expect(queue.front()).to.equal(300);
 		});
 
-		it("should throw Exception when empty",function() {
-			var queue = Queue.createQueue();
-			expect(queue.shift).to.throw(Queue.EmptyQueueException);
+		it("should return null when empty",function() {
+			var queue = Queue.createCircularQueue();
+			expect(queue.shift()).to.equal(null);
 		});
 	});
 
 	describe(".isEmpty()",function() {
 		it("should return true when no object inside",function() {
-			var queue = Queue.createQueue(5);
+			var queue = Queue.createCircularQueue(5);
 			expect(queue.isEmpty());
 
 			queue.push(200);
@@ -85,7 +85,7 @@ describe("queue",function() {
 		});
 
 		it("should return false when there is object inside",function() {
-			var queue = Queue.createQueue(5);
+			var queue = Queue.createCircularQueue(5);
 
 			expect(queue.isEmpty());
 
@@ -115,9 +115,9 @@ describe("queue",function() {
 
 	describe(".front()",function(){
 		it("should throw exception when empty",function() {
-			var queue = Queue.createQueue(5);
+			var queue = Queue.createCircularQueue(5);
 
-			expect(queue.front).to.throw(Queue.EmptyQueueException);
+			expect(queue.front()).to.equal(null);
 		});
 	});
 });
