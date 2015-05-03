@@ -79,7 +79,7 @@ function createQueue(intialCapacity) {
 
 	that.front = function() {
 		if (length === 0) {
-			throw new EmptyQueueException();
+			return null;
 		}
 		return container[head];
 	};
@@ -93,11 +93,6 @@ function createQueue(intialCapacity) {
 	};
 
 	return that;
-}
-
-function EmptyQueueException () {
-	this.message = "Operation cannot be done because queue is empty";
-	this.name = "EmptyQueueException";
 }
 
 module.exports = {
