@@ -61,3 +61,19 @@ It will return the number of element inside queue;
 ```js
   var isEmpty = queue.isEmpty()
 ```
+
+##Performance
+
+This is comparison using RapidQueue shift() and Array shift()
+
+http://jsperf.com/rapidqueue-shift-vs-array-shift
+
+As you can see, it is significantly faster
+
+This is comparison using RapidQueue push() and Array push()
+
+http://jsperf.com/rapidqueue-push-vs-array-push
+
+RapidQueue.push() and Array.push() speed is about the same.
+
+
