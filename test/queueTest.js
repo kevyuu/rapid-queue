@@ -49,9 +49,9 @@ describe("queue",function() {
 			expect(queue.front()).to.equal(300);
 		});
 
-		it("should throw Exception when empty",function() {
+		it("should return null when empty",function() {
 			var queue = Queue.createQueue();
-			expect(queue.shift).to.throw(Queue.EmptyQueueException);
+			expect(queue.shift()).to.equal(null);
 		});
 	});
 
@@ -114,10 +114,10 @@ describe("queue",function() {
 	});
 
 	describe(".front()",function(){
-		it("should throw exception when empty",function() {
+		it("should return null when empty",function() {
 			var queue = Queue.createQueue(5);
 
-			expect(queue.front).to.throw(Queue.EmptyQueueException);
+			expect(queue.shift()).to.equal(null);
 		});
 	});
 });

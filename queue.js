@@ -3,7 +3,6 @@ function createQueue(intialCapacity) {
 	var head = 0;
 	var tail = 0;
 	var length = 0;
-	var initialCapacity = initialCapacity;
 	var currentSize = (typeof initialCapacity === undefined) ? initialCapacity : 200;
 	var container = [];
 	container.length=currentSize;
@@ -62,7 +61,7 @@ function createQueue(intialCapacity) {
 
 	that.shift = function() {
 		if (length === 0) {
-			return null;
+			throw new EmptyQueueException();
 		}
 		tmp = container[head];
 		head++;
@@ -79,12 +78,12 @@ function createQueue(intialCapacity) {
 
 	that.front = function() {
 		if (length === 0) {
-			return null;
+			throw new EmptyQueueException();
 		}
 		return container[head];
 	};
 
-	that.length = function() {
+	that.getLength = function() {
 		return length;
 	};
 
@@ -95,9 +94,10 @@ function createQueue(intialCapacity) {
 	return that;
 }
 
-module.exports = {
-	createQueue : createQueue
-};
+function EmptyQueueException () {
+	this.message = "Operation cannot be done because queue is empty";
+	this.name = "EmptyQueueException";
+}
 
 
 

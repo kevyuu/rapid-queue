@@ -38,7 +38,7 @@ push will insert 5 to the back of the queue, it will automatically grow the arra
   var front = queue.front();
 ```
 
-It will return the front element without removing it from the queue
+It will return the front element without removing it from the queue. It will return null if queue is empty.
 
 ###Remove front element
 
@@ -46,7 +46,7 @@ It will return the front element without removing it from the queue
   var front = queue.shift();
 ```
 
-It will return and remove front element from the queue.
+It will return and remove front element from the queue. It will return null if queue is empty.
 
 ###Get queue length
 
