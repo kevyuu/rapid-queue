@@ -1,4 +1,5 @@
-# rapid-queue
+rapid-queue
+=============
 Javascript array.shift() is slow. This is an implementation of queue using circular buffer and table doubling. This implementation of shift is up to 100x faster than javascript array.shift().
 
 #How to use
