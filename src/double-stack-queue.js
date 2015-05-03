@@ -49,3 +49,5 @@ function createDoubleStackQueue() {
 module.exports = {
 	createQueue : createDoubleStackQueue
 };
+
+http://jsperf.com/rapidqueue-shift-vs-array-shift/2
