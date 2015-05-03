@@ -83,7 +83,7 @@ function createQueue(intialCapacity) {
 		return container[head];
 	};
 
-	that.getLength = function() {
+	that.length = function() {
 		return length;
 	};
 
