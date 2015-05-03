@@ -3,6 +3,7 @@ function createQueue(intialCapacity) {
 	var head = 0;
 	var tail = 0;
 	var length = 0;
+	var initialCapacity = initialCapacity;
 	var currentSize = (typeof initialCapacity === undefined) ? initialCapacity : 200;
 	var container = [];
 	container.length=currentSize;
@@ -61,7 +62,7 @@ function createQueue(intialCapacity) {
 
 	that.shift = function() {
 		if (length === 0) {
-			throw new EmptyQueueException();
+			return null;
 		}
 		tmp = container[head];
 		head++;
