@@ -20,11 +20,7 @@ Before using it, require the module
 
 ```js
   var queue = RapidQueue.createQueue();
-  var dsQueue = RapidQueue.createDoubleStackQueue();
-  var circularQueue = RapidQueue.createCircularQueue
 ```
-
-RapidQueue.createQueue is the same as RapidQueue.createDoubleStackQueue
 
 ##Queue operation
 
