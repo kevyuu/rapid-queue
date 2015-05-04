@@ -31,7 +31,7 @@ Before using it, require the module
   queue.push(5);`
 ```
 
-push will insert 5 to the back of the queue, it will automatically grow the array if the capacity is not enough(for circular queue).
+push will insert 5 to the back of the queue, it will automatically grow the array if the capacity is not enough.
 
 ###Get front element
 
