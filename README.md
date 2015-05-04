@@ -24,7 +24,6 @@ Before using it, require the module
 
 ##Queue operation
 
-All of the operation below is aplicable to both double-stack-queue and circular-queue
 
 ###Inserting element to the end of queue
 
