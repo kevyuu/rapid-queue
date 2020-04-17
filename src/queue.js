@@ -3,7 +3,7 @@ function createQueue(intialCapacity) {
 	var head = 0;
 	var tail = 0;
 	var length = 0;
-	var initialCapacity = initialCapacity;
+	var initialCapacity = intialCapacity;
 	var currentSize = (typeof initialCapacity === undefined) ? initialCapacity : 200;
 	var container = [];
 	container.length=currentSize;
